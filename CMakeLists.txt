@@ -11,11 +11,12 @@ find_package(ECM   REQUIRED NO_MODULE)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick QuickControls2  )
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2  )
 
 find_package(KF6  REQUIRED COMPONENTS   Kirigami    I18n
     CoreAddons
    ColorScheme
+   IconThemes
 )
 
 qt_standard_project_setup()
@@ -52,8 +53,7 @@ target_link_libraries(appkiritest
     KF6::I18n
     KF6::CoreAddons
     KF6::ColorScheme
-
-
+    KF6::IconThemes
 )
 
 include(GNUInstallDirs)
