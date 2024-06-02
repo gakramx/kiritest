@@ -6,10 +6,14 @@
 #include <QQuickStyle>
 #include <Kirigami/Platform/PlatformTheme>
 #include <KColorSchemeManager>
+#include <KIconThemes/kicontheme.h>
+ #include <QQuickWindow>
 #include "colorschememanager.h"
 int main(int argc, char *argv[])
 {
+   QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
     QGuiApplication app(argc, argv);
+	KIconTheme::current();
     KLocalizedString::setApplicationDomain("helloworld");
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
@@ -17,7 +21,7 @@ int main(int argc, char *argv[])
 
     //QQuickStyle::setStyle("Universal");
     // if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-    //     QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+       QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     // }
     qmlRegisterType<colorschememanager>("com.example.ColorSchemeManager", 1, 0, "ColorSchemeModel");
     QQmlApplicationEngine engine;
