@@ -5,7 +5,6 @@ import QtQuick.Controls as Controls
 
 import org.kde.kirigami as Kirigami
 import "."
-import org.kde.quickcharts as Charts
 import QtQuick.Controls.Material
 import org.kde.kirigamiaddons.components
 import com.example.ColorSchemeManager 1.0
